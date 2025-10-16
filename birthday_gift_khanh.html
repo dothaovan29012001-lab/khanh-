@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Khanh 🎂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe4d6 50%, #ffd4c0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Đám mây bồng bềnh */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 100px;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 100px;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 40px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .cloud1:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud1:after {
+            width: 60px;
+            height: 40px;
+            top: -15px;
+            right: 10px;
+        }
+
+        .cloud2 {
+            width: 120px;
+            height: 50px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .cloud2:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud2:after {
+            width: 70px;
+            height: 50px;
+            top: -20px;
+            right: 15px;
+        }
+
+        .cloud3 {
+            width: 90px;
+            height: 35px;
+            top: 30%;
+            right: 5%;
+            animation-delay: 6s;
+        }
+
+        .cloud3:before {
+            width: 45px;
+            height: 45px;
+            top: -20px;
+            left: 10px;
+        }
+
+        .cloud3:after {
+            width: 55px;
+            height: 35px;
+            top: -12px;
+            right: 10px;
+        }
+
+        .cloud4 {
+            width: 110px;
+            height: 45px;
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 9s;
+        }
+
+        .cloud4:before {
+            width: 55px;
+            height: 55px;
+            top: -28px;
+            left: 12px;
+        }
+
+        .cloud4:after {
+            width: 65px;
+            height: 45px;
+            top: -18px;
+            right: 12px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-25px) translateX(5px);
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(255, 140, 80, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gift-box {
+            font-size: 80px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hidden-content {
+            display: none;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .visible {
+            display: block !important;
+        }
+
+        h1 {
+            color: #ff8c42;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 140, 66, 0.2);
+        }
+
+        .photo-frame {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            margin: 30px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 5px solid #ff8c42;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .counter {
+            background: linear-gradient(135deg, #ff8c42 0%, #ffa666 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.3);
+        }
+
+        .counter h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .time-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .message {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin: 25px 0;
+            text-align: left;
+            padding: 20px;
+            background: rgba(255, 140, 66, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid #ff8c42;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #ff8c42;
+            font-weight: 500;
+        }
+
+        .instruction {
+            color: #ff8c42;
+            font-size: 1.2em;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        /* Music player - ẩn nhưng vẫn hoạt động */
+        #bgMusic {
+            display: none;
+        }
+
+        .music-note {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(255, 140, 66, 0.9);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255, 140, 66, 0.4);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+
+        .music-note:hover {
+            transform: scale(1.1);
+        }
+
+        .music-note.playing {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .time-display {
+                font-size: 1.8em;
+            }
+            
+            .message {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Đám mây -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+
+    <!-- Music player -->
+    <audio id="bgMusic" loop>
+        <source src="https://voca.ro/1gWevP4FUeGb" type="audio/mpeg">
+    </audio>
+    <div class="music-note" id="musicToggle">🎵</div>
+
+    <div class="container">
+        <div id="giftBox">
+            <div class="gift-box">🎁</div>
+            <p class="instruction">Nhấn vào hộp quà để mở nè Khanh! 💝</p>
+        </div>
+
+        <div id="content" class="hidden-content">
+            <h1>CHÚC MỪNG SINH NHẬT KHANH! 🎂</h1>
+            
+            <div class="photo-frame">
+                <img src="" alt="Van & Khanh" id="couplePhoto">
+            </div>
+
+            <div class="counter">
+                <h3>⏰ Chúng mình đã yêu nhau được:</h3>
+                <div class="time-display" id="loveCounter">0 ngày</div>
+            </div>
+
+            <div class="message">
+                <p>Thêm tuổi mới, em chúc Khanh luôn vui, luôn đắt job dự án để kiếm được nhiều xiền nuôi em 💰✨</p>
+                
+                <p>Mong Khanh luôn thuận lợi trong công việc và cuộc sống nha~ Quà sinh nhật tuổi 24 này, em muốn em cùng mở quà với Khanh, nên là... Khanh đừng buồn vì chưa nhận được quà ngay nhé, nhanh sang đây với em để unbox quà 🎁</p>
+                
+                <p>Có một chút buồn vì không thể ở bên đón sinh nhật tuổi mới cùng Khanh... 🥺 Nhưng không sao, nghĩ đến việc hôm nay em được ăn bánh sinh nhật Khanh tặng là em vui nhắm ^^ (haha em đùa chút thôi~)</p>
+                
+                <p>Em iêu Khanh nhiều lắm, nhiều hơn ngày hôm qua một chút, nhiều hơn ngày hôm kia nhiều chút 💕 Gửi tới Khanh nhiều cái ôm... 🤗</p>
+                
+                <p>Thật ra Khanh biết là em luôn tỏ ra vui vẻ, không quan tâm Khanh, không nhớ Khanh khi yêu xa... nhưng mà cứ mỗi lần mông lung xong tập trung suy nghĩ về Khanh là em lại nhớ, lại buồn, lại có chút tủi thân xíu đó 🥹</p>
+                
+                <p>Em nhớ cái thơm của Khanh, nhớ vòng tay ôm của Khanh lắm... 💭💕</p>
+                
+                <p style="margin-top: 20px; font-style: italic; color: #ff8c42;">Chỉ mong mau hết yêu xa để em Pon, em cún ngốc này được ở bên Khanh thật lâu... 🐶💗</p>
+            </div>
+
+            <div class="signature">
+                Của Van, gửi Khanh 💌<br>
+                17/10/2025
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tính ngày yêu nhau
+        function updateLoveCounter() {
+            const startDate = new Date('2023-12-17');
+            const today = new Date('2025-10-17'); // Ngày sinh nhật
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const years = Math.floor(diffDays / 365);
+            const months = Math.floor((diffDays % 365) / 30);
+            const days = (diffDays % 365) % 30;
+            
+            let displayText = '';
+            if (years > 0) displayText += `${years} năm `;
+            if (months > 0) displayText += `${months} tháng `;
+            displayText += `${days} ngày`;
+            
+            document.getElementById('loveCounter').textContent = displayText;
+        }
+
+        // Mở quà
+        document.getElementById('giftBox').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('content').classList.add('visible');
+            
+            // Tự động phát nhạc khi mở quà
+            const music = document.getElementById('bgMusic');
+            music.play().catch(e => {
+                console.log('Không thể tự động phát nhạc. Người dùng cần tương tác.');
+            });
+            document.getElementById('musicToggle').classList.add('playing');
+        });
+
+        // Toggle nhạc
+        document.getElementById('musicToggle').addEventListener('click', function() {
+            const music = document.getElementById('bgMusic');
+            if (music.paused) {
+                music.play();
+                this.classList.add('playing');
+            } else {
+                music.pause();
+                this.classList.remove('playing');
+            }
+        });
+
+        // Load ảnh từ file đã upload
+        window.addEventListener('DOMContentLoaded', async function() {
+            updateLoveCounter();
+            
+            // Đọc ảnh từ file system
+            try {
+                const imgData = await window.fs.readFile('8d2e3456-6fc5-4fd4-962b-8ee876af24c1');
+                const blob = new Blob([imgData], { type: 'image/jpeg' });
+                const imgUrl = URL.createObjectURL(blob);
+                document.getElementById('couplePhoto').src = imgUrl;
+            } catch (err) {
+                console.log('Đang load ảnh...', err);
+                // Fallback: hiển thị ảnh trực tiếp từ data
+                document.getElementById('couplePhoto').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
